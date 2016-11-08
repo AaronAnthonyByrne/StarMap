@@ -3,7 +3,7 @@
  */
 void setup()
 {
-  size(800, 600);
+  size(800, 800);
   background(0);
   loadData();
   printStars();
@@ -38,11 +38,12 @@ void printStars()
 
 void drawGrid()
 {
-  int row =10;
-  int col =10;
+  int row =11;
+  int col =11;
   float cellW, cellH;
   cellW = width / col;
   cellH = height / row;
+  int parsec=-5;
   for (int y = border; y < height-border; y += cellH)
   {
     for (int x = border; x < width-border; x += cellW)
@@ -51,11 +52,35 @@ void drawGrid()
       stroke(128, 0, 128);
       rect(x, y, cellW, cellH);
       fill(128, 0, 128);
-      text("parsec", x, border);
+       
     }
-    text(" parasec", border-50, y);
+    text(parsec, border-15, y+10);
+    text(parsec, y,border );
+    parsec++;
   }
-  void draw()
+  text(parsec, height-border,border );
+  text(parsec,border,height-border );
+}
+
+void plotStars()
+{
+  
+  for (int i = 0; i < star.size(); i++) 
   {
-    drawGrid();
+    
+    float plotx = map(star.get(i).Xg, -5, 5, border, width-border);
+    float ploty = map(star.get(i).Yg, -5, 5, 0, height-border);
+    
+    fill(255,0,0);
+    ellipse(plotx,ploty,5,5);
   }
+ // Xg = row.getFloat(13);
+   // Yg = row.getFloat(14);
+  
+}
+
+void draw()
+{
+  drawGrid();
+  plotStars();
+}
