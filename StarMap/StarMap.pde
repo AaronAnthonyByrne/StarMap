@@ -52,31 +52,37 @@ void drawGrid()
       stroke(128, 0, 128);
       rect(x, y, cellW, cellH);
       fill(128, 0, 128);
-       
     }
     text(parsec, border-15, y+10);
-    text(parsec, y,border );
+    text(parsec, y, border );
     parsec++;
   }
-  text(parsec, height-border,border );
-  text(parsec,border,height-border );
+  text(parsec, height-border, border );
+  text(parsec, border, height-border );
 }
 
 void plotStars()
 {
-  
+
   for (int i = 0; i < star.size(); i++) 
   {
-    
+
     float plotx = map(star.get(i).Xg, -5, 5, border, width-border);
     float ploty = map(star.get(i).Yg, -5, 5, 0, height-border);
-    
-    fill(255,0,0);
-    ellipse(plotx,ploty,5,5);
+
+    stroke(0, 255, 255);
+    line(plotx, ploty+2, plotx, ploty-2);
+    line(plotx+2, ploty, plotx-2, ploty);
+
+    noFill();
+    stroke(255, 0, 0);
+    ellipse(plotx, ploty, star.get(i).AbsMag, star.get(i).AbsMag);
+
+    textAlign(LEFT,CENTER);
+    text(star.get(i).DisplayName , plotx, ploty);
   }
- // Xg = row.getFloat(13);
-   // Yg = row.getFloat(14);
-  
+  // Xg = row.getFloat(13);
+  // Yg = row.getFloat(14);
 }
 
 void draw()
