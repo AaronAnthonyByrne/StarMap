@@ -4,6 +4,7 @@
 void setup()
 {
   size(800,800);
+  loadData();
 }
 
 // Global Arraylist of star objects
@@ -11,16 +12,19 @@ ArrayList<Star> star = new ArrayList<Star>();
 
 void loadData()
 {
-  data.clear();
+  star.clear();
   
-  Table t = loadTable("HabHYG15ly.csv", header);
+  Table t = loadTable("HabHYG15ly.csv", "header");
   for(int i = 0 ; i < t.getRowCount(); i ++)
   {
     TableRow row = t.getRow(i);
-    GDP gdp = new GDP(row);
-    data.add(gdp);
+    Star insert = new Star(row);
+    star.add(insert);
+    
   }
 }
 void draw()
 {
+  
+println(star);
 }
