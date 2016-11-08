@@ -46,9 +46,12 @@ void draw()
     for (int x = border; x < width-border; x += cellW)
     {
       noFill();
-      stroke(50, 0, 100);
+      stroke(128,0,128);
       rect(x, y, cellW, cellH);
-      text(" parasec", x,y);
+       fill(128,0,128);
+      text("parsec", x,border);
     }
+    text(" parasec", border-50,y);
+    
   }
 }
