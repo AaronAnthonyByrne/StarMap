@@ -6,6 +6,9 @@ void setup()
   size(800,800);
 }
 
+// Global Arraylist of star objects
+ArrayList<Star> star = new ArrayList<Star>();
+
 void loadData()
 {
   data.clear();
