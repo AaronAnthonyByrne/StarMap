@@ -28,6 +28,10 @@ class Star
     Zg = row.getFloat(15); 
     AbsMag = row.getFloat(16); 
   }
+  String toString()
+  {
+    return hab + " "+DisplayName+" "+Distance+" "+Xg+""+Yg+""+Zg+""+AbsMag;
+  }
 
 
 }

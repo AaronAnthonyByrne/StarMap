@@ -5,6 +5,7 @@ void setup()
 {
   size(800,800);
   loadData();
+  printStars();
 }
 
 // Global Arraylist of star objects
@@ -23,8 +24,15 @@ void loadData()
     
   }
 }
+
+void printStars()
+{
+  for(Star e: star)
+  {
+    println(e);
+  }
+}
 void draw()
 {
   
-println(star);
 }
