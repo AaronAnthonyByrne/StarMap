@@ -80,6 +80,12 @@ void plotStars()
 
     textAlign(LEFT,CENTER);
     text(star.get(i).DisplayName , plotx, ploty);
+    
+    if (mouseX >= plotx && mouseX <= ploty)
+    {      
+      stroke(255, 0, 0);
+      fill(255, 0, 0);
+    } 
   }
   // Xg = row.getFloat(13);
   // Yg = row.getFloat(14);
