@@ -4,6 +4,7 @@
 void setup()
 {
   size(800, 600);
+  background(0);
   loadData();
   printStars();
 }
@@ -34,7 +35,8 @@ void printStars()
     println(e);
   }
 }
-void draw()
+
+void drawGrid()
 {
   int row =10;
   int col =10;
@@ -46,12 +48,14 @@ void draw()
     for (int x = border; x < width-border; x += cellW)
     {
       noFill();
-      stroke(128,0,128);
+      stroke(128, 0, 128);
       rect(x, y, cellW, cellH);
-       fill(128,0,128);
-      text("parsec", x,border);
+      fill(128, 0, 128);
+      text("parsec", x, border);
     }
-    text(" parasec", border-50,y);
-    
+    text(" parasec", border-50, y);
   }
-}
+  void draw()
+  {
+    drawGrid();
+  }
