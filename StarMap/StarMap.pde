@@ -11,7 +11,7 @@ void setup()
 
 // Global Arraylist of star objects
 ArrayList<Star> star = new ArrayList<Star>();
-int border = 50;
+float border = 50;
 
 
 
@@ -52,9 +52,9 @@ void drawGrid()
   cellW = width / col;
   cellH = height / row;
   int parsec=-5;
-  for (int y = border; y < height-border; y += cellH)
+  for (float y = border; y < height-border; y += cellH)
   {
-    for (int x = border; x < width-border; x += cellW)
+    for (float x = border; x < width-border; x += cellW)
     {
       noFill();
       stroke(128, 0, 128);
@@ -67,6 +67,23 @@ void drawGrid()
   }
   text(parsec, height-border, border );
   text(parsec, border, height-border );
+  
+  /* 
+  Bryans solution
+  for (float x = -5; x<=5; x++)
+  {
+    float lx = map(x,-5,5,border,width-border);
+    line(lx,0,lx,height-border);
+    text((int)x,lx,10);
+      }
+      for (float y = -5; y<=5; y++)
+  {
+    float ly = map(x,-5,5,border,height-border);
+    line(border,ly,width-border,ly);
+    text((int)y,ly,10);
+    
+  }
+  */
 }
 
 void plotStars()
