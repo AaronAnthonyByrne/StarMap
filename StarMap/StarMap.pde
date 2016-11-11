@@ -26,6 +26,14 @@ void loadData()
     Star insert = new Star(row);
     star.add(insert);
   }
+  //could've done a for each loop.
+  /*
+  for(TableRow row:t.rows());
+  {
+    Star s = new Star(row);
+    stars.add(s);
+  }
+  */
 }
 
 void printStars()

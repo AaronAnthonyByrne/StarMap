@@ -1,6 +1,6 @@
 class Star
 {
-  int hab;
+  int hab;//make it aboolean boolean hab;
   String DisplayName;
   float Distance;
   float Xg, Yg,Zg;
@@ -20,7 +20,7 @@ class Star
   
   Star(TableRow row)
   {
-    hab= row.getInt(2);
+    hab= row.getInt(2); //assigning the hab field as a boolean. hab =(row.getInt(Hab?) ==1);
     DisplayName = row.getString(3);
     Distance = row.getFloat(12);
     Xg = row.getFloat(13);
@@ -30,7 +30,13 @@ class Star
   }
   String toString()
   {
-    return hab + " "+DisplayName+" "+Distance+" "+Xg+""+Yg+""+Zg+""+AbsMag;
+    return hab
+    +" " +DisplayName
+    +" " +Distance
+    +" " +Xg
+    +" " +Yg
+    +" " +Zg
+    +" " +AbsMag;
   }
 
 
